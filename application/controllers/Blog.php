@@ -1,7 +1,13 @@
 <?php
+defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Blog extends CI_Controller{
-    #code       
+    #code
+    
+    public function __construct(){
+		parent::__construct();
+		$this->output->enable_profiler(TRUE);
+	}
     public function index() {
         //echo "Estamos en el indice";
         $data=array(
@@ -13,12 +19,14 @@ class Blog extends CI_Controller{
     }
     
     public function comments(){
-        echo "Esto en el comentario";
+        echo "Estoy en el comentario";
     }
     
     public function producto($producto="no hay", $id="ninguno"){
         echo ucfirst(urldecode($producto));
         echo "</BR>";
         echo ucfirst(urldecode($id));
+		echo "</BR>";
+		echo anchor_popup('http://google.com','Un buscador');
     }
 }
