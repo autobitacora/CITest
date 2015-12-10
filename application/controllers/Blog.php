@@ -15,7 +15,9 @@ class Blog extends CI_Controller{
           'cabecera'    =>  'Una cabecera',
           'mensaje'     =>  'Un mensaje a mi familia que me esta viendo'
         );
+		$this->load->view('templates/header', $data);
         $this->load->view('blogview', $data);
+		$this->load->view('templates/footer');
     }
     
     public function comments(){
